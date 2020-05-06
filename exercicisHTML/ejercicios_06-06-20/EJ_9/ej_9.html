@@ -7,6 +7,7 @@
 </head>
 <body>
     <h2>Listas no ordenadas</h2>
+
     <ul class="disc">
         <li>Elemento1</li>
         <li>Elemento2</li>
@@ -28,29 +29,33 @@
     </ul>
     <h2>Listas ordenadas</h2>
 
-    <ul class="latin">
+    <ol class="latin">
         <li>Elemento1</li>
         <li>Elemento2</li>
         <li>Elemento3</li>
         <li>Elemento4</li>
-    </ul>
+    </ol>
 
-    <ul class="decimal">
-        <li>Elemento1</li>
-        <li>Elemento2</li>
-        <li>Elemento3</li>
-        <li>Elemento4</li>
-    </ul>
-    <ul class="roman">
-        <li>Elemento1</li>
-        <li>Elemento2</li>
-        <li>Elemento3</li>
-        <li>Elemento4</li>
-    </ul>
+    <ol class="decimal">
+        <li value="100">Elemento1</li>
+        <li value="99">Elemento2</li>
+        <li value="98">Elemento3</li>
+        <li value="97">Elemento4</li>
+    </ol>
+    <ol class="roman">
+        <li value="999">Elemento1</li>
+        <li value="1000">Elemento2</li>
+        <li value="1001">Elemento3</li>
+        <li value="1002">Elemento4</li>
+    </ol>
 </body>
 </html>
 
 <style>
+    body{
+        padding:10%;
+        font-size: 2em;
+    }
     ul.circle li{
         list-style:circle;
     }
@@ -59,16 +64,16 @@
         list-style:square;
     }
 
-    ul.latin li{
+    ol.latin li{
         list-style:lower-latin;
     }
 
-    ul.decimal li{
+    ol.decimal li{
         list-style:decimal;
     }
     
-    ul.roman li{ 
-        list-style: lower-roman;
+    ol.roman li{ 
+        list-style-type:lower-roman;
     }
 
 </style>
