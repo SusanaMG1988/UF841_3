@@ -1,0 +1,14 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 2%;
+}
+ul.lista li{
+    list-style-type: none;
+}
+
+ul.lista li:before{
+    content:"-";
+}
+
