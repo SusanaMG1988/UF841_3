@@ -1,14 +1,77 @@
+/* 
+Ejercicio de CSS plano sin resset ni normalize
+*/
+
+/* Estilos generales */
 *{
-    box-sizing: border-box;
+    box-sizing: border-box; 
+    list-style: none ;
 }
-body{
-    padding: 2%;
+
+a{
+    text-decoration: none;
+   
 }
-ul.lista li{
-    list-style-type: none;
+
+/* Titles */
+h1{
+    text-align: center;
+    color: #fefefe;
 }
+
+
+/* Estilos aplicados a las listas */
 
 ul.lista li:before{
     content:"-";
 }
+
+nav a{
+    color: #fefefe;
+}
+/*Efecto parallax */
+.content
+{
+ 
+  height: 1000px;
+  min-height: 1000px;
+  background: #ededed;
+  position: relative;
+  z-index: 1;
+ 
+  padding: 1%;
+  margin: 1%;
+}
+
+header{
+    padding:5%;
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/bg-header.jpg);
+    background-position: center center;
+    background-size: cover;
+    top: 0;
+    position: fixed;
+    z-index: -1;
+}
+.wrapper-parallax {
+    margin-top: 100%;
+    margin-bottom: 300px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  }
+
+footer
+{
+  width: 100%;
+  height: 300px;
+  background: gray;
+  bottom: 0;
+  position: fixed;
+  z-index: -1;
+}
+
+
+
+
+
 
