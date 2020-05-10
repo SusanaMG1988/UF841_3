@@ -96,19 +96,19 @@ header{
     transform: skewx(45deg);
     opacity: 1;
 }
+
 .button::after{
     content:'';
     position: absolute;
     display: block;
-    right: -5px;
-    height: 100%;
-    width: 5px;
+    right: -4px;
+    height: 90%;
+    width: 4px;
     background:#d3b210;
     transition:0.1s;
     transform: skewy(45deg);
     opacity: 1;
-    top: 0;
-
+    top: 3px;
 }
 
 
@@ -133,7 +133,13 @@ header{
     bottom: -1px;
     right: -2px;
     transition:0.5s;
-    width: -3px;
+    width: 2px !important;
+    
 }
 
-
+.button:hover{
+    border-top: 1px solid  #d3b210;
+    border-left: 1px solid  #d3b210;
+    border-right: #d3b210 2px solid;
+    border-bottom: 1px solid  #d3b210;
+}
