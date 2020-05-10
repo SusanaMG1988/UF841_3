@@ -43,6 +43,7 @@ nav a, nav .nav-title{
     color: #fefefe;
     padding-left: 1%;
     padding-top: 5%;
+    margin-left: 100px;
 }
 
 /* Efecto parallax */
@@ -54,7 +55,12 @@ nav a, nav .nav-title{
   position: relative;
   z-index: 1;
   padding:1%;
-  margin:1% 0;
+  /* margin:1% 0; */
+  width: 80%;
+  margin:0 auto;
+  border-radius: 8px;
+  margin-bottom:10px;
+  
 }
 
 header{
@@ -144,3 +150,4 @@ header{
     border-right: #d3b210 2px solid;
     border-bottom: 1px solid  #d3b210;
 }
+
