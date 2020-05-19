@@ -1,6 +1,7 @@
 /* ALL */
-*{
+* {
     box-sizing: border-box;
+
 }
 
 /* TIPOGRAFÍA */
@@ -11,6 +12,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'robotoRegular';
     font-style: normal;
@@ -28,33 +30,69 @@
     font-style: normal;
     src: local('robotoBlack'), url(../fonts/roboto-black.woff2) format('woff2');
 }
-h2{
+
+h2 {
     font-family: 'robotoBlack';
-    
+
+
 }
 
-p{
-    font-size: 1.5em;
+p {
+    font-size: 1.2em;
     font-family: 'robotoLight';
-    
+
+
+}
+
+h2,
+p {
+    color: whitesmoke;
 }
 
 /* ESTILOS GENERALES FORMULARIOS  */
-form{
+form {
     padding: 1%;
     border-radius: 15px;
-    background-color: rgba(245, 245, 220, 0.678);
+    background-color: rgba(28, 19, 121, 0.575);
     width: 30%;
     margin-bottom: 14px;
 }
 
 /* CAMPOS DE TEXTO */
-input.nombre, input.pass, textarea{
+input.nombre,
+input.pass,
+textarea {
     padding: 14px;
     border-radius: 5px;
-    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
 }
 
+/* CHECBOX */
+input[type=checkbox] {
+    /* tamaño Checkboxes */
+    -ms-transform: scale(1.2);
+    /* IE */
+    -moz-transform: scale(1.2);
+    /* FF */
+    -webkit-transform: scale(1.2);
+    /* Safari y Chrome */
+    -o-transform: scale(1.2);
+    /* Opera */
 
+}
 
+/* SUBMIT */
+input[type=submit] {
+    background-color: rgba(19, 13, 82, 0.575);
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-weight: bold;
+    margin-top: 14px;
+}
 
+input[type=submit]:hover {
+    background-color: rgba(33, 24, 136, 0.575);
+}
