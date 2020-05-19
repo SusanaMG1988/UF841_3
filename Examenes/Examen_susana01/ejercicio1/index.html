@@ -1,72 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formularios</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formularios</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-<!-- HTML コード -->
-    <!-- FORM 1 -->
-    <div class="container">
-        <form action="#">
-          <h2>REGISTER</h2>
-          <p>
-            <label for="name">Nombre:</label>
-            <input class="nombre" type="text" name="name" id="name" placeholder="Ej: JohnSmith" />
-          </p>
-          <p>
-            <label for="password">Contraseña:</label>
-            <input class="pass" type="password" name="password" id="password" placeholder="password"/>
-          </p>
-          <p>
-            <label for="textarea">Descripción:</label>
-            <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
-          </p>
-          <p>
+  <!-- HTML コード -->
+  <!-- FORM 1 -->
+  <div class="container">
+    <form name="register" action="#">
+      <h2>REGISTER</h2>
+      <p>
+        <label for="name">Nombre:</label>
+        <input class="nombre" type="text" name="name" id="name" placeholder="Nombre de usuario" />
+      </p>
+      <p>
+        <label for="password">Contraseña:</label>
+        <input class="pass" type="password" name="password" id="password" placeholder="password" />
+      </p>
+      <p>
+        <label for="textarea">Descripción:</label>
+        <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+      </p>
+      <p>
 
-            Sube una imagen de perfil: <br>
-        
-            <input type="file" name="archivosubido">
-        
-            <input type="submit" value="Enviar datos">
-        
-          </p>
-          <p>
-            <input type="checkbox" name="checkbox" id="checkbox" />
-            <label for="checkbox">Acepto los términos y condiciones.</label>
-          </p>
-      
-          <p>
-            <input type="submit" value="Submit" />
-          </p>
-        </form>  
-      </div>
+        Sube una imagen de perfil: <br>
 
-    <!-- END FORM 1 -->
+        <input type="file" name="archivosubido">
 
+        <input type="submit" value="Subir imagen">
 
-    <!-- ////////区切り////////-->
+      </p>
+      <p>
+        <input type="checkbox" name="checkbox" id="checkbox" />
+        <label for="checkbox">Acepto los términos y condiciones.</label>
+      </p>
 
-
-    <!-- FORM 2 -->
-
-    
-    <form name="formulario" method="post" action="http://pagina.com/send.php">
-      <h2>FORM 2</h2>
-      <!-- Lista de selección -->
-     <p>Selecciona la opción deseada:</p>  <br>
-      <select name="combo">
-        <!-- Opciones de la lista -->
-        <option value="1">Opción 1</option>
-        <option value="2" selected>Opción 2</option> <!-- Opción por defecto -->
-        <option value="3">Opción 3</option>
-      </select>
+      <p>
+        <input type="submit" value="Enviar" />
+      </p>
     </form>
+  </div>
 
-     
-    <!-- END FORM 2 -->
+  <!-- END FORM 1 -->
+
+
+  <!-- ////////区切り////////-->
+
+
+  <!-- FORM 2 -->
+
+
+  <form name="impositivo" method="post" action="http://pagina.com/send.php">
+    <h2>Métodos de pago</h2>
+    <!-- Lista de selección -->
+    <p>Selecciona el tipo de IVA:</p> <br>
+    <select name="combo">
+      <!-- Opciones de la lista -->
+      <option value="1">IVA general (21%)</option>
+      <option value="2" selected>IVA reducido (10%)</option> <!-- Opción por defecto -->
+      <option value="3">IVA superreducido (4%)</option>
+    </select>
+
+    <p>
+      Elige un método de pago: <br>
+    <label for="input1"> <img style="width: 70px; height: 70px;" src="svg/comercio-y-compras.svg" alt=""></label>
+   
+    <input id="input1" name="radio" type="radio" />
+    <br>
+    <label for="input2"> <img style="width: 70px; height: 70px;" src="svg/paypal.svg" alt=""></label>
+   
+    <input id="input2" name="radio" type="radio" />
+    <label for="input1"></label>
+
+  </p>
+
+
+  </form>
+
+
+  <!-- END FORM 2 -->
 
 </body>
+
 </html>
