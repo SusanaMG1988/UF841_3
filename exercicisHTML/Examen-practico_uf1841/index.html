@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<!-- HTML コード -->
+    <!-- FORM 1 -->
+    <div class="container">
+        <form action="#">
+          <h2>FORM 1</h2>
+          <p>
+            <label for="name">Nombre:</label>
+            <input class="nombre" type="text" name="name" id="name" placeholder="John Smith" />
+          </p>
+          <p>
+            <label for="password">Contraseña:</label>
+            <input class="pass" type="password" name="password" id="password" placeholder="password"/>
+          </p>
+          <p>
+            <label for="textarea">Motivo:</label>
+            <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+          </p>
+          <p>
+
+            Sube un archivo:
+        
+            <input type="file" name="archivosubido">
+        
+            <input type="submit" value="Enviar datos">
+        
+          </p>
+          <p>
+            <input type="checkbox" name="checkbox" id="checkbox" />
+            <label for="checkbox">Quiero recibir información de este sitio web.</label>
+          </p>
+      
+          <p>
+            <input type="submit" value="Submit" />
+          </p>
+        </form>  
+      </div>
+
+    <!-- END FORM 1 -->
+
+
+    <!-- ////////区切り////////-->
+
+
+    <!-- FORM 2 -->
+
+    
+    <form name="formulario" method="post" action="http://pagina.com/send.php">
+      <h2>FORM 2</h2>
+      <!-- Lista de selección -->
+      Selecciona la opción deseada: <br>
+      <select name="combo">
+        <!-- Opciones de la lista -->
+        <option value="1">Opción 1</option>
+        <option value="2" selected>Opción 2</option> <!-- Opción por defecto -->
+        <option value="3">Opción 3</option>
+      </select>
+    </form>
+
+     
+    <!-- END FORM 2 -->
+
+</body>
+</html>
