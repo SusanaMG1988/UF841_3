@@ -1,0 +1,26 @@
+<!-- 
+14- Afegir a l'exercici anterior que ens digui per qual dels quatre és divisible (cal dir
+tots aquells pels quals és divisible)
+ -->
+
+<script>
+    var n1 = prompt("Escribe un numero");
+
+    if (n1 % 2 === 0 || n1 % 3 === 0 || n1 % 5 === 0 || n1 % 7 === 0) {
+        if (n1 % 2 === 0){
+            document.write("Es divisible por 2.");
+        }
+        if (n1 % 3 === 0){
+            document.write("Es divisible por 3.");
+        }
+        if (n1 % 5 === 0){
+            document.write("Es divisible por 5.");
+        }
+        if (n1 % 7 === 0){
+            document.write("Es divisible por 7.");
+        }
+
+    } else {
+        document.write("Te equivocaste we");
+    }
+</script>
