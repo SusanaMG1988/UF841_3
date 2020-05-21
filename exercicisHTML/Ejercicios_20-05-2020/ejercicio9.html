@@ -1,0 +1,18 @@
+<!-- 
+9- Escriu un programa que demani una frase i escrigui  quantes vegades apareix la
+lletra a
+ -->
+
+ <script>
+
+     var text = prompt("Escribe una frase");
+     var vocalA = text.length;
+     var i;
+
+     for (i = 0; i < vocalA; i++) {
+     if (text.substr(i,1) === "a") {
+     document.write(text.substr(i,1));
+     }
+     }
+
+ </script>
