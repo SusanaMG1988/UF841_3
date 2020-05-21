@@ -1,0 +1,24 @@
+<!-- 
+16- Escriure un programa que escrigui en pantalla els divisors comuns de dos
+nombres donats
+ -->
+
+<script>
+    var n1 = prompt("Escribe un numero");
+    var n2 = prompt("Escribe otro numero");
+
+    var menor;
+    var i;
+    
+    if(n1 < n2){
+        menor = n1;
+    }else{
+        menor = n2;
+    }
+
+    for(i = 2; i < menor / 2; i++){
+        if(n1 % i === 0 && n2 % i === 0){
+            document.write(i,", ");
+        }
+    }
+</script>
