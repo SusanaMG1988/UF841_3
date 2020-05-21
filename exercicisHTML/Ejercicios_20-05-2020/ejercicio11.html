@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+11- Escriu un programa que demani una frase i escrigui quantes de les lletres que
+té són vocals
+ -->
+
+    <script>
+        var a = e = i = o = u = blancos = 0;
+        vectorLetras = consultaTexto();
+
+        function consultaTexto() {
+            var peticionTexto = window.prompt("Escribe algo wey");
+            var brokenText = peticionTexto.toLowerCase().split("");
+            return brokenText;
+        }
+
+        for (k = 0; k < vectorLetras.length; k++) {
+            switch (vectorLetras[k]) {
+                case "a":
+                case "à":
+                case "á":
+                    a++;
+                    break;
+
+                case "e":
+                case "è":
+                case "é":
+                    e++;
+                    break;
+
+                case "i":
+                case "í":
+                case "ï":
+                    i++;
+                    break;
+
+                case "o":
+                case "ó":
+                case "ò":
+                    o++;
+                    break;
+
+                case "u":
+                case "ú":
+                case "ü":
+                    u++;
+                    break;
+
+                case " ":
+                    blancos++;
+            }
+        }
+
+        totalVocales = a + e + i + o + u;
+
+        document.write("Hay" + a + "vocales 'a' <br>");
+        document.write("Hay" + e + "vocales 'e' <br>");
+        document.write("Hay" + i + "vocales 'i' <br>");
+        document.write("Hay" + o + "vocales 'o' <br>");
+        document.write("Hay" + u + "vocales 'u' <br>");
+
+        document.write("<br>");
+        document.write("Total de vocales:" + totalVocales);
+        document.write("<br>");
+        document.write("Total espacios en blanco:" + blancos);
+        document.write("<br>");
+        document.write("Total carácteres escritos:" + vectorLetras.length);
+        document.write("<br>");
+        document.write("Texto original: <br>" + vectorLetras.join("") + "<br>");
+    </script>
+
+</body>
+
+</html>
