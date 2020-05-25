@@ -1,0 +1,75 @@
+<!-- Conversor de grados Celsius a grados Fahrenheit
+crea un documento html que pida un numero de grados en centigrados y devuelva su valor en Farenheit
+Formula: (°C × 9/5) + 32 = °F
+Puedes usar promts o inputs y los eventos que quieras. 
+Tienes que crear una función para convertir los datos a la que le pases los grados celsius 
+como parametro y devuelva el equivalente en farenheit
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Grados Celsius a Farenheit</title>
+</head>
+
+<body>
+    <h1>Conversor de grados Celsius a Fahrenheit</h1>
+    <form action="#" method="POST">
+        <label for="gc">Grados Celsius:</label>
+        <input type="text" name="gc" id="gc">
+        <input type="button" value="calcular" name="enviar" id="enviar" onclick="conversor()" />
+
+        <script>
+            function conversor() {
+                var gCelsius = document.getElementById("gc").value;
+                var gFarenheit = ((gCelsius * 9) / 5) + 32;
+                alert(gFarenheit + "F");
+            }
+        </script>
+
+        <style>
+            h1{
+                text-align: center;
+                color: rgba(18, 20, 20, 0.527);
+                
+            }
+            form {
+
+                background-color: lightblue;
+                margin: 0 auto;
+                min-width: 16%;
+                max-width:40%;
+                padding: 1%;
+                border-radius: 5px;
+                border-color: cyan;
+                font-size: 2em;
+                font-weight: bold;
+                color: whitesmoke;
+                text-align: center;
+
+            }
+
+            input[type="text"],
+            input[type="button"]{
+
+                padding:5px;
+                border-radius: 5px;
+
+            }
+
+            input[type="button"]{
+                
+                color: whitesmoke;
+                background-color: teal;
+                border-color: teal;
+                font-weight: bold;
+            }
+               
+        </style>
+
+    </form>
+</body>
+
+</html>

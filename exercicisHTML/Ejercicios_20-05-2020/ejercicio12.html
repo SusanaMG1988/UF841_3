@@ -14,7 +14,26 @@
      -->
 
      <script>
-         
+         var peticionTexto = prompt("Escribe una frase");
+         function vocalCount(){
+             var a = newArray(20);
+             a = frase;
+             document.write("La frase es:<br>" +a);
+             var vocales = a.length;
+             document.write("La frase tiene" + vocales + "letras<br>");
+             document.write("Las vocales en esta frase son:");
+             var x = 0;
+             var y = 0;
+             for(y = 0; y < letras; i ++){
+                 if((a[y]=='a')||(a[y]=='e')||(a[y]=='i')||(a[y]=='o')||(a[y]=='u')||(a[y]=='A')||(a[y]=='E')||(a[y]=='I')||(a[y]=='O')||(a[y]=='U')){
+                     ++x;
+                     document.write(a[y]+", ");
+                 }
+             }
+             document.write("<br> el numero de vocales es: "= +x);
+         }
+
+         document.write("Total de caracteres escritos:" + vocalCount());
      </script>
 
 </body>
