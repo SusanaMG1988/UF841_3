@@ -33,13 +33,59 @@ cambia la sentencia if else por un switch case
 -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diccionario</title>
 </head>
 <body>
+    <h1>Diccionario limitado Español-Japones</h1>
+    <form action="#">
+        <label for="cast">Escribe una de estas palabras:</label>
+        <p>Pescado, Carne, Pan, Verdura o Fruta</p>
+        <input type="text" name="cast" id="cast">
+        <input type="submit" value="send">
+        <p id="traduccion"></p>
+    </form>
+    <script>
+        //var palabra = prompt("Escribe una palabra");
+
+        //alimentos (escritos en kana)
+        //Romaji:
+        //En orden    ["sakana","niku","pan","yasai","kudamono"]
+        var japones = ["さかな","にく","パン","やさい","くだもの"];
+
+        //Traduccion al castellano
+        var castellano = ["Pescado","Carne","Pan","Verdura","Fruta"];
+        
+        //if - else
+        if(palabra === "") {
+            Traduccion = "Escribe una palabra";
+
+        }else{
+            for(var i = 0; i < castellano.length; i++) {
+                if(palabra === castellano [i]){
+                    traduccion = japones[i];
+                    break;
+                }
+                console.log(i);
+            }
+            if(traduccion === "") {
+                traduccion = "La palabra"+palabra+"no está en el diccionario";
+            }
+            console.log(traduccion);
+        }
+
+        var TraduccionShow = document.getElementById("traduccion");
+        TraduccionShow.innerHTML = traduccion;
+    </script>
+    <style>
+        h1{
+            text-align: center;
+        }
+    
+    </style>
     
 </body>
 </html>
