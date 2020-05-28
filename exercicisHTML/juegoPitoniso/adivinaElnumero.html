@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+
+
+    <script>
+        //Número mínimo
+        var min = 1;
+        //Número máximo
+        var max = 100;
+
+        //Número random
+        var magicNumber = parseInt(Math.random() * (max - min) + min);
+
+        console.log(magicNumber);
+
+        var message = "Adivina el número mágico, ingresa un número del 1 al 100.";
+
+        while(true){
+            var userNumber = prompt(message);
+            userNumber = parseInt(userNumber);
+
+            if(userNumber === magicNumber){
+                alert("Has adivinado el número mágico");
+                break;
+            }else if(userNumber < magicNumber){
+                message = "El número que ingresaste es menor al número mágico, prueba otra vez!";
+              
+
+            }else if (userNumber > magicNumber){
+                message = "El número que ingresaste es mayor ak número mágico, prueba otra vez!";  
+            }
+
+        }
+        
+    </script>
+</body>
+</html>
