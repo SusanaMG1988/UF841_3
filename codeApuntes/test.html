@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+
+<body>
+    <!-- 28/05/2020 -->
+    <h1 id="test">Test afegir classes desde javaScript (y estilos)</h1>
+    <script>
+        var test = document.getElementById("test");
+        test.style.color = "red";
+        test.addEventListener("click", /*canviColor*/ function () {
+            //function callback -se ejecuta después de que pase algo
+            test.style.color = "green"; //si clicas al h1, cambiara al color indicado en esta función
+            return "Se ha cambiado el color"
+
+        });
+
+        // en el caso de no tener la funcion anonima, la creo:
+
+        /*
+        function canviColor(){
+             test.style.color = "green";
+             return "Se ha cambiado el color"
+        }
+       console.log(canviColor);
+        */
+
+        /* otra manera de hacerlo
+
+        test.onclick = function (){
+              test.style.color = "green";
+              return "Se ha cambiado el color";
+        }; */
+
+        test.onclick = function () {
+            test.style.color = "blue";
+            return "Se ha cambiado el color";
+        }
+
+        /*
+        con clases
+        console.log(className);
+        test.className = "miClase segunda clase";
+        */
+
+        /*
+        con métodos
+        
+        */
+
+    </script>
+
+
+    <style>
+        /* 
+        .miClase{ 
+            color: purple; 
+         } 
+         */
+    </style>
+
+
+</body>
+
+</html>
