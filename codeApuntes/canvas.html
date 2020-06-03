@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        canvas {
+            border: 3px solid;
+        }
+    </style>
+    <!-- <canvas width="500" height="500" id="myCanvas"> -->
+
+    <!-- </canvas> -->
+
+    <Script>
+        var ANCHO = 500;
+        var ALTO = 300;
+        var canvas = document.createElement("canvas");
+        canvas.width = ANCHO;
+        canvas.height = ALTO;
+
+        canvas.id = "myCanvas";
+
+
+        document.body.appendChild(canvas);
+        console.log.canvas;
+        var x = 0,
+            y = 40,
+            w = 20,
+            h = 20;
+        var ctx = canvas.getContext("2d");
+
+        var speed = 2;
+
+        var update = function () {
+            var crossRightLimit = x >= (ANCHO - W);
+            var CrossLeftLimit = x;
+           // var a = 3 + 4;
+
+            if (x > 480) {
+                speed = -speed;
+            }
+            if (x <= 0) {
+                x = 0;
+                speed = -speed;
+            }
+            x = x + speed;
+            console.log(x);
+
+        }
+
+
+
+        var draw = function () {
+            ctx.context.context.clearRect(0, 0, 500, 300);
+
+            ctx.fillstyle = "#70100";
+            ctx.context.fillRect(x, y, w, h);
+        }
+
+        var step = function () {
+            window.requestAnimationFrame(step);
+            update();
+            draw();
+            console.log("new frame");
+        }
+
+        step();
+
+
+
+
+        //var canvas = document.getElementById("myCanvas");
+
+        ctx.fillstyle = "#70100";//le dices que color quieres para dibujar dentro del canvas.
+        ctx.fillRect(10, 40, 100, 40);
+         ctx.fillRect(100, 90, 10, 40);
+        console.log(ctx);//devuelve la erramienta que emplea para dibujar (?) trabajamos en 2d.
+    </Script>
+</body>
+
+</html>
