@@ -40,9 +40,9 @@ cambia la sentencia if else por un switch case
     <title>Diccionario</title>
 </head>
 <body>
-    <h1>Diccionario limitado Español-Japones</h1>
+    <h1>Diccionario Español-Japones</h1>
     <form action="#">
-        <label for="cast">Escribe una de estas palabras:</label>
+        <label for="cast">Escribe una palabra:</label>
         <p>Pescado, Carne, Pan, Verdura o Fruta</p>
         <input type="text" name="cast" id="cast">
         <input type="submit" value="send">
@@ -65,20 +65,21 @@ cambia la sentencia if else por un switch case
 
         }else{
             for(var i = 0; i < castellano.length; i++) {
-                if(palabra === castellano [i]){
+                if(palabra === castellano[i]){
                     traduccion = japones[i];
                     break;
                 }
                 console.log(i);
             }
             if(traduccion === "") {
-                traduccion = "La palabra"+palabra+"no está en el diccionario";
+                traduccion = "La palabra "+palabra+" no está en el diccionario";
             }
            alert(traduction);
         }
 
-        var TraduccionShow = document.getElementById("traduccion");
+        var TraduccionShow = document.write("traduccion");
         TraduccionShow.innerHTML = traduction;
+        
     </script>
     <style>
         h1{
