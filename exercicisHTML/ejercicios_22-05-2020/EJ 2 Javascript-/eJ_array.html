@@ -12,21 +12,23 @@
 	var amigos  = ["pedro","maria","joan","pili"];
 	
 	// 1- queremos que escriba "mis amigos son maria y joan. rellena los huecos."
-	document.write("mis amigos son"+ "<b>" + amigos[] + "</b>" + "  y <b>" + amigos[]+"</b>");
+	document.write("mis amigos son "+ "<b>" + amigos[1] + "</b>" + "  y <b>" + amigos[2]+"</b> <br>"); 
 
 	// 2- ¿dónde está el fallo?
-	var enemigos = ["scipion" + "scorpio" + "black"];
+	var enemigos = ["scipion", "scorpio", "black"]; //había + en lugar de , 
 
 	// 3- escribe en el documento web "scorpio es peor que black" de modo que scorpio esté en negrita y la letra sea de color rojo.
-
+	document.write("<b style= 'color: red'>" + enemigos[1] + "</b>" + " es peor que " + enemigos[2] + "<br>");
 	// 4- escribe una instrucción que devuelva la longitud del array amigos sea cual sea el número de datos almacenados en su interior.
-
+	document.write("Longitud del array: " + amigos.length + "<br>");
 	// 5- "aitana" es también tu amiga. Escribe una instrucción que la añada al final de la lista amigos 
-
+	var nuevoAmigo = amigos.push('aitana');
+	document.write(amigos + "<br>");
 	// 6 - "pedro" ha cambiado de nombre. ahora se llama "nacho". actualiza con una instrucción tu lista de amigos
 
 	// 7 - "tor" es ahora tu enemigo. añádelo con una instruccion al final de tu lista de enemigos.
-
+	var nuevoEnemigo = enemigos.push('thor');
+	document.write(enemigos + "<br>");
 </script>
 
 

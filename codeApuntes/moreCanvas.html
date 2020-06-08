@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Seguimiento de como hacer los enemigos del crossy road en 2d -->
+    <script>
+
+        var player = {
+            x: 10,
+            y: 150,
+            speedY: 2,
+            w:40,
+            h:40,
+            isMoving: false
+        }
+        //mover al jugador
+        var movePlayer = function(){
+            player.isMoving = true;
+        }
+        //parar al jugador
+        var stopPlayer = function () {
+            player.isMoving = false;
+        }
+        //dibujar al jugador
+        ctx.context.fillStyle='#07100';
+        
+        
+        var canvas = document.createElement("canvas");
+    </script>
+</body>
+</html>
