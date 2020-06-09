@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <title>JavaScript Intro||| mueveteformación.com / easyrobotics.es</title>
   <meta charset="utf-8" />
@@ -10,11 +11,12 @@
     }
   </style>
 </head>
+
 <body>
   <h1>Repte - Afegeix un objecte player</h1>
-  <canvas id="mycanvas" width="640" height="360" ></canvas>
+  <canvas id="mycanvas" width="640" height="360"></canvas>
   <script>
-    window.addEventListener("load",function() {
+    window.addEventListener("load", function () {
 
       //constants || les constants es solen escriure en mayúscules
       var GAME_WIDTH = 640;
@@ -24,8 +26,7 @@
       var gameLive = true;
 
       //rivals
-      var enemies = [
-        {
+      var enemies = [{
           x: 100, //coordenada x
           y: 100, //coordenada y
           speedY: 2, //velocitat
@@ -72,8 +73,18 @@
       Crea l'objecte just després del comentari
       */
 
-      
 
+        //player PATO D:
+      var player = {
+        x: GAME_HEIGHT / 10,
+        y: 160,
+        speedX: 2.5,
+        w:40,
+        h:40,
+        isMoving: 0,
+      };
+     
+      
 
       //Objecte goal - objectiu (tresor)
       var goal = {
@@ -86,11 +97,11 @@
 
       var sprites = {};
 
-      var movePlayer = function() {
+      var movePlayer = function () {
         player.isMoving = true;
       }
 
-      var stopPlayer = function() {
+      var stopPlayer = function () {
         player.isMoving = false;
       }
 
@@ -104,7 +115,7 @@
       canvas.addEventListener('touchstart', movePlayer);
       canvas.addEventListener('touchend', stopPlayer);
 
-      var load = function() {
+      var load = function () {
         sprites.player = new Image();
         sprites.player.src = 'images/hero.png';
 
@@ -119,21 +130,21 @@
       };
 
       //Actualitza la lògica del joc
-      var update = function() {
+      var update = function () {
 
         //miram si guanyes el joc
-        if(checkCollision(player, goal)) {
+        if (checkCollision(player, goal)) {
           //atura el joc
-            gameLive = false;
+          gameLive = false;
 
-            alert('Has Guanyat!');
+          alert('Has Guanyat!');
 
-            //refresca la pàgina
-            window.location = "";
+          //refresca la pàgina
+          window.location = "";
         }
 
         //actualitza la posició del jugador
-        if(player.isMoving) {
+        if (player.isMoving) {
           player.x = player.x + player.speedX;
         }
 
@@ -141,10 +152,10 @@
         var i = 0;
         var n = enemies.length;
 
-        enemies.forEach(function(element, index){
+        enemies.forEach(function (element, index) {
 
           //miram les colisions amb el jugador
-          if(checkCollision(player, element)) {
+          if (checkCollision(player, element)) {
             //atura el joc
             gameLive = false;
 
@@ -158,12 +169,11 @@
           element.y += element.speedY;
 
           //miram si tocam el canvas
-          if(element.y <= 10) {
+          if (element.y <= 10) {
             element.y = 10;
             //element.speedY = element.speedY * -1;
             element.speedY *= -1;
-          }
-          else if(element.y >= GAME_HEIGHT - 50) {
+          } else if (element.y >= GAME_HEIGHT - 50) {
             element.y = GAME_HEIGHT - 50;
             element.speedY *= -1;
           }
@@ -172,9 +182,9 @@
 
 
       //mostra el joc en pantalla
-      var draw = function() {
+      var draw = function () {
         //esborra el canvas
-        ctx.clearRect(0,0,GAME_WIDTH,GAME_HEIGHT);
+        ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
 
         //dibuixa el background
         ctx.drawImage(sprites.background, 0, 0);
@@ -183,7 +193,7 @@
         ctx.drawImage(sprites.player, player.x, player.y);
 
         //dibuixa el rivals
-        enemies.forEach(function(element, index){
+        enemies.forEach(function (element, index) {
           ctx.drawImage(sprites.enemy, element.x, element.y);
         });
 
@@ -192,18 +202,18 @@
       };
 
       //funció  que s'executa x vegades per segon(60fps)
-      var step = function() {
+      var step = function () {
 
         update();
         draw();
 
-        if(gameLive) {
+        if (gameLive) {
           window.requestAnimationFrame(step);
         }
       };
 
       //mira si dos rectangles colisionen
-      var checkCollision = function(rect1, rect2) {
+      var checkCollision = function (rect1, rect2) {
 
         var closeOnWidth = Math.abs(rect1.x - rect2.x) <= Math.max(rect1.w, rect2.w);
         var closeOnHeight = Math.abs(rect1.y - rect2.y) <= Math.max(rect1.h, rect2.h);
@@ -216,4 +226,5 @@
     });
   </script>
 </body>
+
 </html>
