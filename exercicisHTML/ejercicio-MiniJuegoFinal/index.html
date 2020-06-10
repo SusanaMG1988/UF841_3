@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Mini Game</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <style>
+        canvas {
+            border: 1px solid black;
+            width: 100%;
+
+        }
+    </style>
+</head>
+    
+<body>
+    
+    <!-- 区切り HTML -->
+
+    <h1>CrossyRoad Ver Ragnarok</h1>
+
+    <!-- 区切り CANVAS-->
+
+    <canvas id="mycanvas" width="1920" height="1080"></canvas>
+   
+    <!-- 区切り  JS-->
+
+    <script>
+        window.addEventListener("load", function () {
+
+            //Constantes
+            var GAME_W = 1920;
+            var GAME_H = 1080;
+
+            
+            var gameLive = true;
+
+            //Enemigos (valkirias corruptas)
+            var enemies = [{
+
+                    //Coordenadas
+                    x: 600,
+                    y: 400,
+                    //velocidad
+                    speedY: 5,
+                    //anchura y altura 
+                    w: 150,
+                    h: 140
+                },
+                {
+
+                    x: 300,
+                    y: 260,
+                    speedY: 6,
+                    w: 150,
+                    h: 140
+                },
+                {
+                    x: 1000,
+                    y: 0,
+                    speedY: 5,
+                    w: 150,
+                    h: 140
+                },
+                {
+
+                    x: 1430,
+                    y: 300,
+                    speedY: 5,
+                    w: 150,
+                    h: 140
+                },
+                {
+
+                    x: 1650,
+                    y: 200,
+                    speedY: 10,
+                    w: 150,
+                    h: 140
+                }
+            ];
+
+            //Nuestro heroe
+            var player = {
+                x: GAME_H / 19,
+                y: 520,
+                speedX: 5.5,
+                w: 40,
+                h: 40,
+                isMoving: 0,
+            };
+
+
+
+            //Objetivo del juego (princesa)
+            var goal = {
+                x: 1800,
+                y: 620,
+                w: 111,
+                h: 118
+            }
+
+            //Movimiento del jugador
+            var sprites = {};
+
+            var movePlayer = function () {
+                player.isMoving = true;
+            }
+
+            var stopPlayer = function () {
+                player.isMoving = false;
+            }
+
+           //Canvas y context
+            var canvas = document.getElementById("mycanvas");
+            var ctx = canvas.getContext("2d");
+
+            //Event listeners para mover al personaje
+            canvas.addEventListener('mousedown', movePlayer);
+            canvas.addEventListener('mouseup', stopPlayer);
+            canvas.addEventListener('touchstart', movePlayer);
+            canvas.addEventListener('touchend', stopPlayer);
+
+            var load = function () {
+                //Heroe
+                sprites.player = new Image();
+                sprites.player.src = 'images/Playerkyubi.png';
+                //Background
+                sprites.background = new Image();
+                sprites.background.src = 'images/Rbk7wz.png';
+                //Enemigos
+                sprites.enemy = new Image();
+                sprites.enemy.src = 'images/EnemieValk.png';
+                //Objetivo(princess)
+                sprites.goal = new Image();
+                sprites.goal.src = 'images/goal2.png';
+            };
+
+            //Actualiza la lógica del juego
+            var update = function () {
+
+                //Si ganas el juego:
+                if (checkCollision(player, goal)) {
+                    //se para el juego
+                    gameLive = false;
+                    // alert You win!
+                    alert('Has salvado a la princesa!');
+
+                    //refresca la página
+                    window.location = "";
+                }
+
+                //Actualiza la posición del Heroe
+                if (player.isMoving) {
+                    player.x = player.x + player.speedX;
+                }
+
+                //Actualizan a los enemigos
+                var i = 0;
+                var n = enemies.length;
+
+                enemies.forEach(function (element, index) {
+
+                    //Si colisionas con las valkirias:
+                    if (checkCollision(player, element)) {
+                        //para el juego
+                        gameLive = false;
+                        //You lose
+                        alert('Te mamaste, la princesa ahora está muerta por tu culpa! pero eh, lo has intentado...');
+
+                        //refresca la página
+                        window.location = "";
+                    }
+
+                    //Moviment del enemigo
+                    element.y += element.speedY;
+
+                    //Mira si toca el canvas
+                    if (element.y <= 10) {
+                        element.y = 10;
+                        element.speedY *= -1;
+                    } else if (element.y >= GAME_H - 50) {
+                        element.y = GAME_H - 50;
+                        element.speedY *= -1;
+                    }
+                });
+            };
+
+
+            //imprime el juego en pantalla
+            var draw = function () {
+                //borra el canvas
+                ctx.clearRect(0, 0, GAME_W, GAME_H);
+
+                //imprime el background
+                ctx.drawImage(sprites.background, 0, 0);
+
+                //imprime al heroe
+                ctx.drawImage(sprites.player, player.x, player.y);
+
+                //imprime los rivales
+                enemies.forEach(function (element, index) {
+                    ctx.drawImage(sprites.enemy, element.x, element.y);
+                });
+
+                //imprime a la princesa
+                ctx.drawImage(sprites.goal, goal.x, goal.y);
+            };
+
+            //FPS
+            var step = function () {
+
+                update();
+                draw();
+
+                if (gameLive) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+
+            //mira si dos rectangulos colidsionan 
+            var checkCollision = function (rect1, rect2) {
+
+                var closeOnWidth = Math.abs(rect1.x - rect2.x) <= Math.max(rect1.w, rect2.w);
+                var closeOnHeight = Math.abs(rect1.y - rect2.y) <= Math.max(rect1.h, rect2.h);
+                return closeOnWidth && closeOnHeight;
+            }
+
+            //arranca el juego
+            load();
+            step();
+        });
+    </script>
+</body>
+
+</html>
