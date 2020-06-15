@@ -1,3 +1,86 @@
 // *****************************
 // +++++++ $VARIABLES ++++++
 // *****************************
+/* ***************************** */
+
+
+
+/* @each para las redes sociales */
+/* ***************************** */
+
+$socialmedia-colors: (
+twitter: #55acee,
+pinterest: #CA2028,
+youtube: #F00000,
+foursquare: #0086BF,
+facebook: #3b5998,
+flickr: #ff0084,
+google: #dd4b39,
+instagram: #3f729b,
+linkedin: #007bb6,
+vimeo: #1ab7ea
+);
+
+@each $social, $value in $socialmedia-colors{
+.redes .#{$social} a{
+background-color: $value;
+background-image: url(‘../redes/#{$social}.svg’);
+}
+}
+
+/* ***************************** */
+/* @each para botones y sus :hover */
+/* ***************************** */
+
+$botones:(
+trabajo: #F78181,
+personal:#BFFF00,
+amigos: #00FFFF,
+otros: #DF01D7 );
+
+
+@each $nombre, $valor in $botones{
+
+.boton-#{$nombre}{
+
+background-color: $valor;
+
+&:hover{
+background-color: invert($valor);
+}
+}
+}
+
+/* ***************************** */
+/* @each para los h */
+/* ***************************** */
+
+$titulos: (h1,900,3rem,black),
+(h2,800,2.5rem,black),
+(h3,700,2rem,black),
+(h4,600,1.5rem,black),
+(h5,500,1rem,black),
+(h6,400,.5rem,red);
+
+@each $h, $fw, $fz, $color in $titulos{
+
+#{$h}{
+font-weight: $fw;
+font-size: $fz;
+color: $color;
+}
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+:root{
+    // Colores
+    --color-white: #eee;
+    --color-darkGrey: #1f1f1f;
+    --color_medGrey: #5a5a5a;
+    --color_lightGrey:#95989A;
+    --color_purple: #8A0BDB;
+    --colorBg_darkGrey: #1f1f1f;
+    --ColorBg_green: #0BDBA3;
+}
+

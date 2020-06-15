@@ -2,11 +2,47 @@
 // +++++++ $TIPOGRAFIA ++++++
 // *****************************
 
-
-*{
-    color:whitesmoke;
+@font-face {
+    font-family: 'nunito';
+    font-style: normal;
+    src: local('nunito'), url(assets/fonts/nunito-regular.woff2) format('woff2');
 }
 
-h6{
-text-align: center;
+@font-face {
+    font-family: 'opensans';
+    font-style: normal;
+    src: local('opensans'), url(assets/fonts/opensans-regular.woff2) format('woff2');
 }
+
+/* ------------------ HTML ------------------ */
+
+html {
+    font-family: 'opensans', sans-serif;
+    font-size: 16px;
+    color: #95989A;
+}
+
+
+.font_nunito{
+    font-family: 'nunito';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

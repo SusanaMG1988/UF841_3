@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen part-1 Susana Moreno García</title>
+</head>
+
+<body>
+
+    <!-- 
+        Enunciado:
+        El formulario debe tener dos campos de texto y un botón. Debe aparecer la información que indique
+        que se tiene que escribir una contraseña nueva en el primero y confirmarla en el segundo.
+        Con Javascript comprobar si las contraseñas tienen más de 6 caracteres, sino es así mostrar un alert
+        que indique que la contraseña debe ser mas larga.
+        Luego comprobar que coinciden las dos contraseñas, sino mostrar un alert con el error.
+        Si coinciden mostrar un alert que nos diga que la contraseña se ha actualizado correctamente.
+    
+    -->
+    <!-- ここまで HTML コード -->
+    <h1>comprobar contraseña</h1>
+    <form action="" name="f1">
+        <label for="">Contraseña: <input type="password" name="pass1" minlength="6" size="20"></label>
+        <br>
+        <label for="">Repite cont: <input type="password" name="pass2" minlength="6" size="20"></label>
+        <br>
+        <input type="button" value="Comprobar si coinciden" onClick="comprobarContraseña()">
+    </form>
+
+    <!-- 区切り -->
+    <script>
+        //ここまで JS コード
+        function comprobarContraseña() {
+
+            pass1 = document.f1.pass1.value
+            pass2 = document.f1.pass2.value
+
+            if (pass1 == pass2) {
+                alert("Las contraseñas coinciden...");
+                if (pass1.length < 6 || pass2.length > 6) {
+                    alert("La contraseña es demasiado corta...");
+                }
+            } else {
+                alert("Las contraseñas deben coincidir...");
+                if (pass1.length < 6 || pass2.length > 6) {
+                    alert("La contraseña es demasiado corta...");
+                }
+            }
+        }
+    </script>
+    <!-- 区切り -->
+    <style>
+        /*ここまで- Styles*/
+        form {
+
+
+            background-color: lightcoral;
+            color: white;
+            border-radius: 5px;
+            -webkit-box-shadow: 10px 10px 12px -4px rgba(199, 199, 199, 1);
+            -moz-box-shadow: 10px 10px 12px -4px rgba(199, 199, 199, 1);
+            box-shadow: 10px 10px 12px -4px rgba(199, 199, 199, 1);
+            padding: 2%;
+            font-size: 1.5em;
+            font-weight: bold;
+            display: inline-block;
+
+        }
+
+        input[type=button] {
+            padding: 15px;
+            background-color: rgb(150, 84, 130);
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        input[type=button]:hover {
+            background-color: rgb(116, 34, 105);
+        }
+
+        input[type=password] {
+            padding: 10px;
+            font-size: 1.5em;
+            margin: 14px;
+        }
+
+        label {
+            margin: 14px;
+        }
+    </style>
+</body>
+
+</html>

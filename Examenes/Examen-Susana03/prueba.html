@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PRUEBAS Examen part-2 Susana Moreno García</title>
+</head>
+
+<body>
+    
+    <!-- ここまで HTML コード -->
+
+    <!-- TITLE -->
+    <h1>Tablas de multiplicar del 1 al 9 </h1>
+
+    <!-- FORM -->
+    <form>
+        <h2>Escribe un número del 1 to 9:</h2>
+
+        <input id="num" type="text" size="30">
+        <button type="button" onclick="getTable()">Generar Tabla</button>
+    </form>
+
+    <!-- SPAM -->
+    <span id="error" class="errMsg"></span>
+
+    <!-- TABLE -->
+    <table id="tabla-multi">
+        <tr>
+            <td id="table1"></td>
+        </tr>
+        </tr>
+    </table>
+
+    <!-- 区切り -->
+
+    <script>
+        //ここまで JS コード 
+        function getTable() {
+            var num = document.getElementById("num").value;
+            if (!((num < 10) && (num > 0))) {
+                document.getElementById("error").innerHTML = "ERROR!" + "&nbsp" + num + "&nbsp" + "is not valid";
+                return false;
+            } else {
+                var product1 = "";
+                var product2 = "";
+                for (var i = 1; i < 10; i++) {
+                    product1 += num + "&nbsp" + "x" + "&nbsp" + i + "&nbsp" + "=" + "&nbsp" + (num * i) + "</br>";
+                    product2 += "<li>" + num + "&nbsp" + "x" + "&nbsp" + i + "&nbsp" + "=" + "&nbsp" + (num * i) +
+                        "</li>";
+                }
+                document.getElementById("error").innerHTML = "";
+                document.getElementById("table1").innerHTML = product1;
+
+            }
+        }
+        // Fin ejercicio examen
+    </script>
+
+    <!-- 区切り -->
+    <h2>Chuleta</h2>
+    <!--
+        AÑADIDOS: 
+        Creada una muestra visual de todas las tablas 
+     -->
+    <script>
+        //ここまで JS コード muestra all tables
+
+        //ここまで 変数
+        var loop = 1;
+        var count = 0;
+        var count2 = 1;
+        //HTML コード TABLE on DW
+        document.write("<table id='tablaChuleta'>");
+        //ここまで　content ループ
+        while (loop <= 90) {
+            if (count == 0) {
+                document.write("<tr>"); //HTML コード tr
+            }
+            count++;
+            document.write("<td>" + count2 + " x " + count + " = " + count * count2 + "</td>");
+            loop++;
+
+            if (count == 9) {
+                document.write("</tr>") //HTML コード /tr
+                count = 0;
+                count2++;
+            }
+        }
+        document.write("</table>");
+        //END HTML コード TABLE on DW
+    </script>
+
+    <!-- 区切り -->
+
+    <style>
+        /*ここまで- Styles*/
+
+        /* GENERAL */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* BODY */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5%;
+
+        }
+
+        /* TITLE */
+        h1 {
+            text-align: center;
+            margin-bottom: 5%;
+
+            font-size: 3em;
+        }
+
+        h1,
+        h2 {
+            color: tomato;
+        }
+
+        /* TABLE */
+        #tablaChuleta {
+            border: tomato 1px solid;
+            padding: 3%;
+            font-size: 1.5em;
+
+            color: rebeccapurple;
+            background-color: white;
+
+            -webkit-box-shadow: 10px 10px 12px -4px rgba(199, 199, 199, 1);
+            -moz-box-shadow: 10px 10px 12px -4px rgba(199, 199, 199, 1);
+            box-shadow: 10px 10px 12px -4px rgba(199, 199, 199, 1);
+        }
+
+        /* INPUT + BUTTON + DIV Style*/
+        button,
+        input,
+        #tabla-multi {
+            max-width: 300px;
+            font-size: 1.5em;
+            padding: 20px;
+        }
+
+        #tabla-multi {
+            color: rebeccapurple;
+        }
+
+       
+       
+
+    </style>
+</body>
+
+</html>
