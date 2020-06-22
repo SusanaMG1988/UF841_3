@@ -241,12 +241,6 @@ h6 {
   --ColorBg_green: #0BDBA3;
 }
 
-/********************************/
-/*******Mixin Responsive*********/
-/********************************/
-/********************************/
-/*******  Mixin FlexBox *********/
-/********************************/
 @font-face {
   font-family: "nunito";
   font-style: normal;
@@ -268,43 +262,14 @@ html {
   font-family: "nunito";
 }
 
-.boton {
-  display: inline-block;
-  width: 300px;
-  padding: 1rem 2rem;
-  color: white;
-  background-color: #571b1b;
-  border-radius: 3px;
-  text-align: center;
-}
-.boton .icon {
-  font-size: 3rem;
-}
-
-.linksExternos {
-  font-size: 1rem;
-}
-.linksExternos__externo1 {
-  font-weight: 900;
-}
-.linksExternos__externo1:hover {
-  font-size: 2rem;
-}
-.linksExternos__externo1:actived {
-  font-size: 2.4rem;
-}
-.linksExternos__externo2 {
-  font-weight: 600;
-}
-.linksExternos__externo3 {
-  font-weight: 300;
-}
-
 a {
   text-decoration: none;
 }
 
-.underline {
+nav a {
+  color: white;
+}
+nav a__underline {
   border-bottom: 2px solid white;
 }
 

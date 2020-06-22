@@ -2,36 +2,26 @@
 // +++++++ $MIXINS ++++++
 // *****************************
 
+// --- Responsive
 
-/********************************/
-/*******Mixin Responsive*********/
-/********************************/
-
-$mediQ-smartphone: 320px;
-$mediQ-tablet: 500px;
-$mediQ-desktop: 1366px;
-
-@mixin responsive($width:$mediQ-smartphone){
-@media only screen and (min-width:$width){
-@content;
-}
+@mixin responsive($width:$mediQ-smartphone) {
+    @media only screen and (min-width: $width){
+        @content;
+    }
 }
 
+
+// Pixel ratio
 @mixin pixelratio($pixel:1){
-@media
-only screen and (-webkit-device-pixel-ratio:$pixel),
-only screen and (-moz-device-pixel-ratio:$pixel),
-only screen and (-o-device-pixel-ratio:$pixel),
-only screen and (-ms-device-pixel-ratio:$pixel)
-{
-@content;
+    @media 
+    only screen and (-webkit-device-pixel-ratio:$pixel),
+    only screen and (-moz-device-pixel-ratio:$pixel),
+    only screen and (-o-device-pixel-ratio:$pixel),
+    only screen and (-ms-device-pixel-ratio:$pixel)
+    {
+      @content;
+    }
 }
-}
-
-
-/********************************/
-/*******  Mixin FlexBox *********/
-/********************************/
 
 
 
